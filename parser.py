@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-subject = "algorithms"
+subject = "operating-system"
 endRange = 4350
 endNumber = 146
 driver = webdriver.Chrome()
