@@ -1,14 +1,17 @@
 from selenium import webdriver
 
+subject = "algorithms"
+endRange = 4350
+endNumber = 146
 driver = webdriver.Chrome()
 questionsReferences = []
 try:
     driver.get("https://google.com")
-    baseUrl = "https://gateoverflow.in/questions/programming-in-c?start="
-    for index in range(0, 4861, 30):
+    baseUrl = "https://gateoverflow.in/questions/" + subject + "?start="
+    for index in range(0, endRange, 30):
         if index != 0:
-            print("\nProgress ---> ", ((index/30)/162)*100)
-            print("\n Length",len(questionsReferences))
+            print("\nProgress ---> ", ((index / 30) / endNumber) * 100)
+            print("\n Length", len(questionsReferences))
         try:
             driver.get(baseUrl + str(index))
             questionList = driver.find_element_by_class_name("qa-q-list")
@@ -26,6 +29,6 @@ finally:
 
 import json
 
-json.dump(questionsReferences, open("programming_in_c.json", "w"))
+json.dump(questionsReferences, open(subject + ".json", "w"))
 
 print(questionsReferences)
