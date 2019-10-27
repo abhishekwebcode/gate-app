@@ -5,6 +5,7 @@ endRange = 4350
 endNumber = 146
 driver = webdriver.Chrome()
 questionsReferences = []
+
 try:
     driver.get("https://google.com")
     baseUrl = "https://gateoverflow.in/questions/" + subject + "?start="
@@ -28,7 +29,5 @@ finally:
     pass
 
 import json
-
 json.dump(questionsReferences, open(subject + ".json", "w"))
-
 print(questionsReferences)
