@@ -52,7 +52,7 @@ width: 100%;
             } else {
                 $scope.currentIndex = parseInt(location.hash.substring(1));
                 $scope.question = $scope.currentIndex + 1;
-                $scope.browser.src = `https://gateoverflow.in/${questions[$scope.currentIndex].substr(1)}`
+                $scope.browser.src = `https://hello-world-odd-dust-e364.tensorflowx.workers.dev/${questions[$scope.currentIndex].substr(1)}`
             }
         }
         $scope.update = function (step) {
