@@ -52,14 +52,14 @@ width: 100%;
             } else {
                 $scope.currentIndex = parseInt(location.hash.substring(1));
                 $scope.question = $scope.currentIndex + 1;
-                $scope.browser.src = `https://gateoverflow.in/${questions[$scope.currentIndex].substr(1)}`
+                $scope.browser.src = `https://hello-world-odd-dust-e364.tensorflowx.workers.dev/${questions[$scope.currentIndex].substr(1)}`
             }
         }
         $scope.update = function (step) {
             let newIndex = $scope.currentIndex + step;
             if (newIndex >= 0) {
                 if (newIndex < questions.length) {
-                    $scope.browser.src = `https://gateoverflow.in/${questions[newIndex].substr(1)}`;
+                    $scope.browser.src = `https://hello-world-odd-dust-e364.tensorflowx.workers.dev/${questions[newIndex].substr(1)}`;
                     $scope.currentIndex = newIndex;
                     location.hash = newIndex;
                     $scope.question = newIndex + 1;
